@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss">
 :root {
-  --default-spacing: 1.2rem;
+  --spacing-default: 1.2rem;
 }
 
 * {
@@ -72,7 +72,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--default-spacing);
+  padding: var(--spacing-default);
   height: 100%;
   width: 100%;
 }
@@ -82,6 +82,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   max-width: 720px;
   margin: auto;
-  grid-gap: var(--default-spacing);
+  grid-gap: var(--spacing-default);
 }
 </style>
