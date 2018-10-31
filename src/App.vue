@@ -38,6 +38,8 @@ export default {
 <style lang="scss">
 :root {
   --spacing-default: 1.2rem;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
 * {
@@ -66,6 +68,7 @@ html {
 
 body {
   font-family: 'Fjalla One', sans-serif;
+  background: #3b354a;
 }
 
 .app-wrapper {
@@ -79,9 +82,15 @@ body {
 
 .colors-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   max-width: 720px;
   margin: auto;
   grid-gap: var(--spacing-default);
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 720px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>
