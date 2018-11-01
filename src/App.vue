@@ -62,15 +62,15 @@ export default {
     async getColors(page = 1) {
       const result = await api.colors(page);
       this.colors = result.data;
-      this.page = result.page;
+      this.currentPage = result.page;
       this.totalPageCount = result.total_pages;
     },
     showMore() {
-      if (!this.isLastPage) {
-        this.getColors((this.currentPage += 1));
-      } else {
-        this.getColors((this.currentPage -= 1));
-      }
+      const page = !this.isLastPage
+        ? this.currentPage + 1
+        : this.currentPage - 1;
+
+      this.getColors(page);
     },
   },
 };
