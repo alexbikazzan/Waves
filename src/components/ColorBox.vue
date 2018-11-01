@@ -1,7 +1,7 @@
 <template>
   <div class="color-box"
        :style="styleObject">
-    {{ color.name }}
+    {{ colorName }}
     <div class="subtitle">
       {{ color.year }}
     </div>
@@ -25,6 +25,9 @@ export default {
         background: this.color.color,
         color: this.calculateTextColor(this.color.color),
       };
+    },
+    colorName() {
+      return this.color.name.charAt(0).toUpperCase() + this.color.name.slice(1);
     },
   },
   methods: {
@@ -53,8 +56,8 @@ export default {
   color: #000;
   height: 150px;
   min-width: 150px;
-  font-size: 1.2em;
-  font-weight: 700;
+  font-size: 1.4em;
+  font-weight: 500;
 }
 
 .subtitle {
